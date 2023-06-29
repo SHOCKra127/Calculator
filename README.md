@@ -3,9 +3,9 @@
 <p>Онлайн калькулятор разработанный командой HSPG (Hexlet Summer Practice Group).</p>
 <h1>English:</h1>
 <p>Online calculator developed by the HSPG team (Hexlet Summer Practice Group).</p>
-<h1>
+<h2>
   Team members:
-</h1>
+</h2>
 <ul>
   <li>Product manager - Волосевич Алина Николаевна</li>
   <li>Developer - Ширяев  Ярослав  Владимирович</li>

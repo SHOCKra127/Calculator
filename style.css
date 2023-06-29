@@ -1,234 +1,107 @@
-html {
-    background: #100a1c;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   
+  list-style: none;
+  text-decoration: none;
+   
+
+}
+
+
+ 
+
+/*Добавление окантовки и тени для хэдера, расположение контента относительно логотипа*/ 
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  box-shadow: 0 5px 10px;
+}
+
+/*Стилизация логотипа*/
+header .logo{
+  font-size: 20px;
+  font-weight: 900;
+  color: black;
+}
+
+/* Выстраивание списков в ряд и расположение хедера к верхней части экрана*/
+header nav ul li{
+  position: relative;
+  float: left;
+}
+
+/*Позиционирование и стилизация списков*/
+header nav ul li a{
+  padding: 15px;
+  color: black;
+  font-size: 16px;
+  display: block;
+}
+
+/*Анимация почернения для списков*/
+header nav  ul li a:hover{
+  background: black;
+  color: white;
+  
+}
+
+nav ul li ul{
+  position:absolute;
+  left: 0;
+  width: 180px;
+  background: white;
+   display: none;
+}
+nav ul li ul li{
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.2);
+   
+}
+
+nav ul li:hover > ul{
+  display: initial;
+}
+
+ 
+
+.image{
+  margin-bottom: 10px;
+}
+
+.image img{
+height: 300px;
+object-fit: cover;
+border-radius: 7px;
+
+
+}
+
+body{
+      background: #100a1c;
     background-image:
       radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%),
       radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
     background-attachment: fixed;
     color: #6cacc5;
-  }
-  
-  body {
-    color: #6cacc5;
+    text-align: center;
     font: 300 18px/1.6 "Source Sans Pro",sans-serif;
     margin: 0;
-    padding: 5em 0 2em;
-    text-align: center;
-  }
-  
-  h1 {
+      padding: 10em 0 3em;
+}
+
+ h1 {
     font-weight: 300;
     margin: 0;
   }
-  
-  
-  .warning {
-    background: -webkit-linear-gradient(45deg,  #c97874 10%, #463042 90%);
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #8c5059;
-    font-weight: 400;
-    margin: 0 auto 6em;
-    max-width: 9em;
-  }
-  
-  .calculator {
-    font-size: 28px;
-    margin: 0 auto;
-    width: 10em;
-    
-    &::before,
-    &::after {
-      content: " ";
-      display: table;
-    }
-    
-    &::after {
-      clear: both;
-    }
-  }
-  
-  
-  .broken {
-    animation: broken 2s;
-    transform: translate3d(0,-2000px,0);
-    opacity: 0;
-  }
-  
-  .viewer {
-    color: #c97874;
-    float: left;
-    line-height: 3em;
-    text-align: right;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 7.5em;
-    height: 3em;
-  }
-  
-  button {
-    border: 0;
-    background: rgba(42,50,113, .28);
-    color: #6cacc5;
-    cursor: pointer;
-    float: left;
-    font: inherit;
-    margin: 0.25em;
-    width: 2em;
-    height: 2em;
-    transition: all 0.5s;
-    
-    &:hover {
-      background-color: #201e40;
-    }
-    
-    &:focus {
-        outline: 0; 
-
-      &::after{
-        animation: zoom 1s;
-        animation-iteration-count: 1;
-        animation-fill-mode: both; 
-        content: attr(data-num);
-        cursor: default;
-        font-size: 100px;
-        position: absolute;
-             top: 1.5em;
-             left: 50%;
-        text-align: center;
-        margin-left: -24px;
-        opacity: 0;
-        width: 48px;    
-      }
-    }
-  }
-  
-  
-  .ops:focus::after {
-    content: attr(data-ops);
-    margin-left: -235px;
-    width: 420px;
-  }
-  
- 
-  .equals:focus::after {
-    content: attr(data-result);
-    margin-left: -300px;
-    width: 600px;
-  }
-  
 
   
-  .reset {
-    background: rgba(201,120,116,.28);
-    color:#c97874;
-    font-weight: 400;
-    margin-left: -77px;
-    padding: 0.5em 1em;
-    position: absolute;
-      top: -20em;
-      left: 50%;
-    width: auto;
-    height: auto;
-    
-    &:hover {
-      background-color: #c97874;
-      color: #100a1c;    
-    }
-    
-    
-    &.show {
-      top: 20em;
-      animation: fadein 4s;
-    }
-  }
   
- 
-  
-
-  @keyframes zoom {
-    0% { 
-      transform: scale(.2); 
-      opacity: 1;
-    }
-    
-    70% { 
-      transform: scale(1); 
-    }
-    
-    100% { 
-      opacity: 0;
-    }
-  }
-  
-  
-  @keyframes broken {
-    0% {
-      transform: translate3d(0,0,0);
-      opacity: 1;
-    }
-  
-    5% {
-      transform: rotate(5deg);
-    }
-  
-    15% {
-      transform: rotate(-5deg);
-    }
-  
-    20% {
-      transform: rotate(5deg);
-    }
-  
-    25% {
-      transform: rotate(-5deg);
-    }
-  
-    50% {
-      transform: rotate(45deg);
-    }
-  
-    70% {
-      transform: translate3d(0,2000px,0);
-      opacity: 1;
-    }
-  
-    75% {
-      opacity: 0;
-    }
-  
-    100% {
-      transform: translate3d(0,-2000px,0);
-    }
-  }
-  
-  
-  @keyframes fadein {
-    0% {
-      top: 20em;
-      opacity: 0;
-    }
-    
-    50% {
-      opacity: 0;
-    }
-    
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @media (min-width: 420px) {
-    .calculator {
-      width: 12em;
-    }
-    .viewer {
-      width: 8.5em;
-    }
-    button {
-      margin: 0.5em;
-    }
-  }
-  .project {
-    margin-left: 1200px;
-  }

@@ -1,7 +1,7 @@
 # HSPCalc
-<h1>Russian:</h1>
+<h2>Russian:</h2>
 <p>Онлайн калькулятор разработанный командой HSPG (Hexlet Summer Practice Group).</p>
-<h1>English:</h1>
+<h2>English:</h2>
 <p>Online calculator developed by the HSPG team (Hexlet Summer Practice Group).</p>
 <h2>
   Team members:
